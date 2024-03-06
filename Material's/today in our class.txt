@@ -1,0 +1,12 @@
+today in our class 
+we will create the instance for Master Node-Kuber mast01
+
+we are starting the instance 
+we have created the security group for all traffic and Ipv4
+open mobaxterm and pem files as well and connect to nodes
+
+
+we configure the kubernetes cluster --done
+we configure Nodes --
+we configure the pods as well
+

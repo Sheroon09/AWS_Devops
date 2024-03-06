@@ -1,0 +1,70 @@
+MIRAFRA INTERVIEW TAKEN BY VIJAY 04-04-2023
+
+only viay what he spoke === 
+
+ya hi  i'm doing good hope you're also doing good. 
+
+I'm from nellore
+
+tell me about yourself : so my last comapany is borgos technologies, i=so i use to work as senior devops and cloud engineer there. 
+so I'm syed juned i'm having total 4 years of exp as a devops engineer and cloud engineer as part of devops i use to work with some of the devops tools  like :
+
+source code management like GIT, build tool like maven, ci cd tool like jenkins, nexus artifactory, code quality sonarqube, configuration management tool like ansible, cuutager tool like docker, and container orchestration tool like kubernetes.
+
+and coming to cloud i use to work with cloud services like aws, in aws i use to work with some of the services like ec2, iam , s3 cloudwatch, cloudtrail, ebs,
+elb,and i am very familar aws devops concepts like, codecommit, code build, code deploy,codepipeline
+
+so currenty i'm a part of a project called amgen, so here i'm part of a team called devops implement and cloud operations. as part of devops implement i need to work on creating ci cd pipelines for the project like creation of ci cd pipelines here includes creation of multi branch pipeline.
+like getting the code from github to deploying the code to ecs clusters. so thats my primary roles and responsibilities. 
+
+as part of creation of ci cd pipelines i need to create a file called jenkins file where i am going to provide all the details about the tools whihch iam  going to integrate like git for source code management, github for taking the code from central repository, and maven to build the code, and sonarqube to do code quality analysis, and nexus to store the artifactory and docker file to create customised image and ecs to deploy the application.
+
+and as part of cloud operations team i use to work on the tickets provided by different LOP application teams like based on the proiorty like, high level priority, medium level priority and low level priority, so im resposible for working on high level L2 priority items like creation of cloud formation scripts for to create a infrastructure like ec2 iam s3 and cloudwatch all the stuff and i am also responsibile for enabling cross account setup so lets say i need to enable one i am role will be in one aws account and s3 bucket in that under aws account. so i will be responsible for enabiling cross account setup here. and also need to work on ebs volume issues.
+
+
+
+
+so cloudfront is related to network related stuff and i dont have exerience with cloudfront. 
+cloudtrail is if you want to check earlier details what happened, lets say if someone deleted i am role, so if i want to find out who deleted the i am role so that i can able to find out with the cloud trail. so we are going to have all the logs related to that who done what in aws, in what aws services he has done. 
+
+so, cloudformation is the one which can able to create infrastructure, so lets say if i want to create ec2 instance, if i want to create s3 bucket so instead of creating it manually i can able to create it with cloud formation. so cloudformation is to do creation of infrastructure
+
+github i can rate 4 out of 5
+
+github branching strategy : so we have very good branching strategy whhere we have all the production ready code will be there in our master branch and we do have branch called dev branch which were development team will push there data into development branch. so from devleopment branch based upon the feature the development team guys they will cut out a branch called Feature branch based upon the feature and they will work on those branches and they will push all there code into developemtn branches. so after that once we have all the code being ready in dev and the testing being done by the developers like qa testers something if they done that, so once the we have sing up  from the development team we are going to push our code into a branch called QAT. 
+in QAT we two type of branches one is SIT (system integration testing) and one is PT (performance testing). once we have sing off from QAT branch they QAt branch here is SIT and PT branch, we will move our code to pre prod which is an UAT environment and once  we have a singn off from UAT we will push our code into production branch which is a production ready code will be there and we will push our code to production, so thats how branch strategy we are following in our project. 
+
+hotfix : lets say if we push our code to production and if we face any issues then only we are going to have a hotfix branch. so on top of hotfix brnach developers they are going to work and if any issues on proudction we are going to have the hotfix branch. so how many types here it is where : feature branch, development branch, master branch, qat branches, production ready branch and hotfix brnaches and one more branch in between like integration branch so usually we will not go but in our project we suggest to have intergration branch also.
+
+no in integration branch, in my previous project the developemtn branch we are calling it as intergration branch and in this project we are calling it as development branch only we dont have a branch called intergration branch in my current project. 
+
+sp tags is nothing but when we have new release, we are not going with tags we are going with branches only, like i have came across with this tags related concepts so lets say i have version upto v1.0.1 okay then i have to move my code all the commits which is after 1.0.1 and before 1.0.2 so whatever the commits coming after 1.0.1 and upto 1.0.2 all the commits we are going to tag it as v1.0.2 and we are pushing that into github central repository and we are deploying that the code..
+
+git stash : so if i want to store something temporrirly i am going to use a concept called git stash. so lets say i am working in one branch okay and instead of commiting directly to my local repository i want to store somewheere for sometime so in that time i am going to use gitstash. and i mean the work which i was having i will complete it and i will come back the stored one which was there with the git stash i will be there and i will be pushing it to the local repository.
+
+git merge and rebase: with the help of git rebase i am going to merge the  code from one branch to another branch.
+
+when are doing git merge we will going to get extra commit so every time but with git rebase i am not going to get any extra commits and based upon the branch which i am having i am going to have the commits like the lastest commits will be on top of the lastest commit on there branch. 
+lets say branch a and branch b. i am pushing all my code from branch b to branch a lets say i have 1, 2 commits in branch a  and 3,4 commits in branch b. so if i do git rebase all the commits like 3,4 commits will be merging into branch a but it is not going to merge with the commits wich is already there in the branch a it will be on top of it. like 1,2,3,4 the secene will commit as 1,2,3,4 but if it is merge right : it is going to have all the commits and it is going to have all the commits and it is going to create a new commit instead of having the new commits coming from branch B. 
+
+i wil rate myself as 3.5 out of 5 in shell scripting. so we use to create a scripting for to do some day to day process. 
+
+so we will be using some logics as part of jenkins file that is the part where we use usually and the other thing will be when i am creating a docker images using docker file i am going to get lot of images everytime when my ci cd pipeline runs it will create a image every time so that will be keep locally in my docker server because of that we faced many issues. so we came up with a concept with the logic of shell scripting like, I am going to delete all the exisiting docker images with the help of script being return internally in my docker server this is the place where i use and here we have a file called environmental variable.sh, we are going to get an docker image but docker image is not environment related. lets say we should have a docker image based upon the environment like dev, qat, uat, prod. 
+
+mostly the logic or the command which we use if else condition and for loop, why loop and do loop these will be. 
+jenkins i can rate 4.5 out of 5 because from the starting of my career till now i use to work with jenkins. 
+
+so we have scripted pipeline and declarative pipeline okay, so  earlier when i use to start my career i use to go with scripted pipeline because we dont have much knowledge even the open source jenkins tool doesnt have much about declarative pipeline.
+so before 4 years so when we started with the scripted pipeline we use to have more about groovy. so we use to learn the groovy script as must and should and the implementing the logic will be a very tough task. 
+so scripted pipeline will start with a called node, and declarative pipeline will start with a notation called pipeline/
+so declarative pipeline will have the detailed pipeline exploration very easy. the details which we are giving for a declarative pipeline will be very easy format like pipeline and the details about the stages and steps but here in scripted pipeline i need to give the node and stages and steps and under that i need to have groovy scripting being part of it. so to be in place of it declarative pipeline is bit easy when compared with the scripted pipeline. 
+
+so that will be after post build actions, lets say once i done with the deployment, oka, so every time when i done with the deployment i use to the email should be trigger or  notify to the devloper team. so here we have a dl distribution list for a developement team so wherer it is not every devloper we are going to include manager, team lead , and the developers if it is for frontend or backend. and in my jenkins pipeline it will be in post build actions. after doing the deployment we are going to configure the email triggering. so once the deployment is done the email will trigger with the deployment details wether it got succedeed or failed all the stuff. 
+
+DOCKER 3.5/4
+
+we can use the cache to reduce the image size. Here why i used the name cache, lets say of the image which i have created from earlier stage. okay lets step will be the dev. 
+other stage will be dev1 stage. in the dev stage i have all the image details. i have taken the base image, i have coupled and mugged with the all the details required lets say OS.
+
+
+cmd and entry point will do the same thing. insteasd of doing the changes from the docker file if i want to change from the command.

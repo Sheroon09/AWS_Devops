@@ -1,0 +1,26 @@
+Managerial Questions:
+======================
+1) Tell me something which is not mentioned in your resume?
+My family is not mentioned in my resume,basically my father is ____ Worker,
+he has been very hard and supported our family and he is my role model as well.I Have learned many things like
+love what we do and be dedicated toward your work.My mother is housemaker
+and i have learnt time management and the way she supported family.
+If you have sister/brothers just tell there name and profession.
+
+2) What is INCIDENT and PROBLEM management?
+Any issue/error can be marked as incident,group of similar Incidents
+can be marked as a Problem.
+
+3) Where would you like to see yourself after 2-3 years?
+I would like to see myself at a position handling a team/project.
+
+4) What if your project has not done on sprint duration,how will you manage the client?.
+First thing is based on priority of work,i will try to complete that on time,but if still
+i was unable to complete then I will explain my manager/client about the process to finish the task, and the benifits
+of the particular process in improving the quality.
+If i got blocked then will try to reach out team and get the enough information
+to clear the issue.
+5) What is client has changed the requirement for the sprint?
+If the Client changed the requirement then i will try to put extra time and finish my work.
+and also when i get a requirement from client then will ask to share the email with requirement
+so that there will be no sudden surprises in changing the requirement.

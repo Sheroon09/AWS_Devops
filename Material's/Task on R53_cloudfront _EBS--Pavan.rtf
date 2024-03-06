@@ -1,0 +1,133 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}{\f1\fswiss\fprq2\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\f0\fs24\lang9                                                   TASK\par
+1) Different routing policies available in R53?\par
+\tab\b0 In AWS Route53 provides several routing policies to help you manage traffic to your domain name.mostly the comman routing policies are:\par
+
+\pard\nowidctlpar\sl276\slmult1\tx820\tx821\f1\lang1033 1)Simple\expndtw-3  \expndtw0 policy.\par
+2)Latency based\expndtw-6  \expndtw0 policy.\par
+3)Weighted\expndtw-3  \expndtw0 policy.\par
+4)Geolocation\expndtw-4  \expndtw0 policy.\par
+5)Failover\expndtw-3  \expndtw0 policy.\par
+
+\pard\sa200\sl276\slmult1\b\f0\lang9\par
+\ul\b0\f1\lang1033 1)Simple\expndtw-3  \expndtw0 policy.\par
+\ulnone\tab it is used to you have single resource that performs a given function.the policy will direct all traffic to that resource. \par
+
+\pard\sl240\slmult1 steps :  \fs22   i)\b        \b0 Go to hosted zone,  \par
+ii)     Click create record set. \par
+iii)     Type domain. \par
+ iv)     Select record type. \par
+v)      Alias = Yes (or) No.\par
+ vi)     Value = Public IP (or) target like elb, eb etc.              \par
+ vii)    Routing Policy = Simple \par
+viii)    Click, Create.\par
+\par
+
+\pard\nowidctlpar\ri167\sb3\sl276\slmult1\tx820\tx821\fs24 2)Latency based\expndtw-6  \expndtw0 policy. \par
+\tab It is used for low latency. If a user sends a request, latency policy will redirect it to nearest server to that\expndtw-21  \expndtw0 region\par
+
+\pard\sl240\slmult1 steps :  \fs22   i)\b        \b0 Go to hosted zone,  \par
+ii)     Click create record set. \par
+iii)     Type domain. \par
+ iv)     Select record type. \par
+v)      Alias = Yes (or) No.\par
+ vi)     Value = Public IP (or) target like elb, eb etc.              \par
+vii)     Routing Policy = Latency.\par
+viii)       Region = Select region to redirect all the requests from this region to specific ec2 we mentioned above\par
+ix)  SET ID = Unique ID to identify\par
+x)    Assicoate health check = Yes (or) No\par
+xi)  Click, Create.\par
+\par
+
+\pard\nowidctlpar\sl276\slmult1\tx820\tx821\fs24 3)Weighted\expndtw-3  \expndtw0 policy.\par
+
+\pard\nowidctlpar\ri289\sl276\slmult1\tx820\tx821\tab If you have two instances (or) more, it is used to share the load based on our requirements. we have to mention the percentage of load to split across\expndtw-33  \expndtw0 instances.\par
+
+\pard\sl240\slmult1 steps :  \fs22   i)\b        \b0 Go to hosted zone,  \par
+ii)     Click create record set. \par
+iii)     Type domain. \par
+ iv)     Select record type. \par
+v)      Alias = Yes (or) No.\par
+ vi)     Value = Public IP (or) target like elb, eb etc.              \par
+vii)  Routing Policy = Weighted\par
+viii)  Weight = Number (how much load to send to this server).\par
+ix)  SET ID = Unique name to identify server.\par
+x)       Click, Create.\par
+
+\pard\nowidctlpar\ri289\sl276\slmult1\tx820\tx821\fs24\par
+4)Geolocation\expndtw-4  \expndtw0 policy.\par
+\tab Your server is getting requests from many countries (or) regions. If you want to redirect a specific country requests to specific region, we use geolocation\expndtw-33  \expndtw0 policy\par
+
+\pard\sl240\slmult1 steps :  \fs22   i)\b        \b0 Go to hosted zone,  \par
+ii)     Click create record set. \par
+iii)     Type domain. \par
+ iv)     Select record type. \par
+v)      Alias = Yes (or) No.\par
+ vi)     Value = Public IP (or) target like elb, eb etc.            \par
+vii)   \b  \b0 Routing policy = Geolocation.\par
+viii)   Select Country = it will route the entire traffic from this country to that server we  mentioned above.\par
+ix)  Associate health check = Yes (or) No.\par
+
+\pard\nowidctlpar\ri167\sb3\sl276\slmult1\tx820\tx821   x)     Click, Create\par
+\par
+\fs24 5)Failover\expndtw-3  \expndtw0 policy.\fs22\par
+
+\pard\sa200\sl276\slmult1\fs24\tab It is used for secondary server. when an primary server is down (or) unhealthy. The traffic is routed to secondary server\expndtw-16  \expndtw0 automatically.\par
+
+\pard\sl240\slmult1 steps :  \fs22   i)\b        \b0 Go to hosted zone,  \par
+ii)     Click create record set. \par
+iii)     Type domain. \par
+ iv)     Select record type. \par
+v)      Alias = Yes (or) No.\par
+ vi)     Value = Public IP (or) target like elb, eb etc.            \par
+vii)  Routing policy = Failover.\par
+viii)  Failover record type = Primary or secondary\par
+ix)   SET ID = Unique name to identify server.\par
+x)     Associate health check = Yes (or) No.\par
+
+\pard\sa200\sl276\slmult1  xi)     Click, Create\par
+\b 2) What is EBS?\par
+\tab\b0 EBS stands for Elastic Block Store\par
+\tab  it is a cloud-based storage service that allows you to store data in a highly reliable and durable way.it enables you to create & manage storage volumes that you can attach to your ec2 instance.\par
+\tab EBS volumes are designed for high durability, and they use redundant storage across multiple availability zones to ensure data availability in the event of a failure. EBS volumes also provide features such as encryption, snapshots, and automated backup to help ensure the security and recoverability of data stored in EBS volumes.\par
+\b 3) How to take snapshot of EBS volumes?\par
+
+\pard\sl276\slmult1\b0 1) goto AWS--EC2 instances\par
+2)select volumes\par
+3)click on actions --->select create snapshot\par
+4)give name and description for snapshot\par
+5)you can also setup encryption ,choose the snapshot retention period ,and add tags after configuration settings \par
+6)click create snapshot.\par
+\par
+\b 4) How to attach a new ebs to existing ec2?\par
+\par
+\b0 1) goto AWS--EC2 instances\par
+\b 2)\b0 select instance (which one want to attach ebs volumes)\par
+3)click on Actions (select attach volume)\par
+4)select new EBS Volume \par
+\b\par
+5) What is Cloudfront?\par
+\b0\f0\fs24\lang9\tab Amazon CloudFront is a content delivery network (CDN) provided by Amazon Web Services (AWS). It is a global service that delivers static and dynamic web content, including videos, images, and other media, to users with low latency and high transfer speeds.\par
+\tab CloudFront works by caching content in multiple edge locations around the world, which are distributed across different geographic regions. When a user requests content, CloudFront routes the request to the edge location nearest to the user, reducing the latency and improving the response time.\par
+\par
+\tab CloudFront can be used to deliver content from a variety of sources, including Amazon S3, EC2 instances, and on-premises servers, as well as from third-party services. CloudFront also provides a range of features such as SSL/TLS encryption, access control, and real-time logs, making it a highly secure and reliable service.\par
+\par
+\tab CloudFront can be integrated with other AWS services, such as Amazon Route 53, AWS Lambda, and AWS WAF, to provide a comprehensive and scalable solution for content delivery and protection.\par
+\par
+\b 6) Implement CLoudfront to s3 bucket and configure cloudfront domain to R53?\par
+\par
+\b0 1) Create an S3 bucket\par
+2)Create a new CloudFront distribution by going to the CloudFront console and clicking on "Create Distribution".\par
+3)Select "Web" as the delivery method and click on "Get Started".\par
+4)In the "Origin Domain Name" field, select your S3 bucket from the dropdown list.\par
+5)Configure the other CloudFront settings, such as "Viewer Protocol Policy", "Allowed HTTP Methods", "Price Class", etc. as per your requirements.\par
+6)Click on "Create Distribution" to create your CloudFront distribution.\par
+7)Once the distribution is created, note down the CloudFront domain name that is created for your distribution.\par
+8)Go to the Route 53 console and create a new record set for your domain name, selecting "Alias" as the record type.\par
+9)In the "Alias Target" field, paste the CloudFront domain name that you noted down in Step 7.\par
+10)Save the record set and wait for the DNS propagation to complete.\par
+\par
+\tab bOnce the DNS propagation is complete, your CloudFront distribution will be configured to serve your content from your S3 bucket, and your CloudFront domain name will be mapped to your Route 53 record set, enabling users to access your content using your custom domain name.\par
+}
+ 

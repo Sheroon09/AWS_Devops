@@ -1,0 +1,233 @@
+TECHNICAL ROUND INTERVIEW QUSETION FOR GENPACT:
+==============================================
+1. How to connect multiple pods
+2.how to create cluster on k8s
+3.what is namespace 
+4.what is docker
+5.write any docker file and explain 
+6.difference between entrypoint and Cmd
+7.the container is in exited state ,how you run the container and explain the strategy 
+8.how to run container 
+9.expalin about terraform
+10.write sample script and explain. 
+11.difference between attributes and arguments 
+12.explain about variables 
+13. Create ec2 by using terraform 
+14.terraform fmt commands usage 
+15. Terraform modules and workspaces
+16.if one our project member has modified our script in tf ,how can u handle the situation 
+17.how to manage Jenkins job 
+18.if Jenkins server has been stopped ,what is your steps And how u manage slave nodes
+19.write pipeline script 
+20.how can u find errors in that 
+21.most errors what u got in jenkinsfile pipelinescript 
+22. Select any one of aws cloud 
+Expail all Load balancer
+23.what is vpc end points 
+24.what is NACL & sg groups
+
+
+===================================================
+
+Spectraforce interview questions
+================================
+
+1. Explain jenkins architecture
+2. What is master and slave configuration in Jenkins?
+3. How to take take backup for Jenkins?
+4. Explain terraform ?
+5. What is  sonarqube?
+6. What is sonar scanners?
+7. What is the session limit for sonarqube?
+8.Explian disaster recovery, what is DC and DR?
+9. What is the difference between CI/CD/CM?
+10.How to  check running port numbers?
+11.Any 10 ps commands in Linux?
+12. any 10 dangerous commands in Linux
+13. What is the use of du -h command?
+14. What is swap session and swap role?
+15.Explain Linux architecture?
+16. What are different types of shell in Linux?
+16. What is difference between Linux and unix?
+17. What is disaster recovery site?
+18.What is LDAP server?
+19.Deployment location for httpd?
+20. Why we are use ctrl+alt+delete?
+21. Difference between snapshot and ami?
+22. Explain EC2?
+23. Types of ebs voluems?
+24.What Is  CIDR?
+25.We can create how many ips in each subnet?
+26. Explain application load balancer?
+27. Explain auto scaling groups?
+28.Static website in s3?
+29. What is object lock?
+30. What is DNS and it works on which port number?
+
+
+================================================
+
+1) what is your primary tools set
+2) load balancer types and detlas 
+3) vpc
+4) what type of work you have worked in the project
+5) how to write docker  file.
+6)What is end point in VPC Its uses and where it is used
+
+==================================================
+
+Humancloud interview questions 
+==============
+1. Tell me about yourself
+2. Bash script for calculator
+3. Terraform modules 
+4. Kubernetes basic components 
+5.  Jenkins pipeline stages
+
+6. Components in vpc
+7. What all things you have created using terraform
+8. Terraform backend
+
+
+
+FIN INFOCORP:-
+==========================
+
+1.Blue/green signals in jenkins
+2.Explain the steps we have done in our project of CICD process from scratch 
+3.Stages of Jenkins pipeline
+4.What are the issues that you have faced in the project
+5.For which team you have worked.
+6. What are Artifact's 
+7.who has created the Artifact's.
+8.Workspace in Jenkins
+
+
+
+Imfosun technologies private limited
+=====================================
+
+Docker and  docker volume
+Kubernetes and pods and nodes and how to connect
+Cicd pipeline
+Pipeline script 
+Aws R53
+Can we do cloudwatch monitor for on-permise servers
+Pre-prod
+Jenkins
+Maven
+
+
+
+
+Nextrun
+======================
+Kubernetes architecture
+Pods and services and types of services 
+Difference between Stateful and deployment
+Etcd
+Creation of cluster file like. Yaml file 
+Maven life cycle
+Jenkins pipeline
+Poll SCM
+Webhooks
+Aws Cloudwatch
+Difference between SG and NAT GATEWAY 
+Terraform VPC.tf file
+Kubernetes monitoring
+Monitoring tools like cloud watch and others
+
+
+
+TCS interview questions
+========================
+1.   Difference between docker and layer
+2 . How to push docker image to registry
+3. What is -it and -d  explain
+4. What is docker daemon
+5.explain JSON and yaml
+6. Admission controller in k8s
+7.minikube
+8. Heapster
+9. K8s architecture
+10.what is node and cluster
+11.services in k8s
+12.k8s backups
+13.docker host image from archive
+14.docker life cycle
+15.k8s  Deployment
+ 16. Conroller manager in k8s 
+17.load balancers in k8s
+
+
+
+
+Goldman Sach Interview Questions:-
+==================================
+
+What is EC2
+
+What is EBS
+
+What is ELB
+
+What is Security Group
+
+Can we connect EC2 without EBS
+
+What is the most important things to launch an EC2
+
+What is Apache Tomcat
+
+How to connect tomcat with specific port, & how to access externally even though the security group is allowed.
+
+What is main purpose to use tomcat
+
+Tell some maven commands
+
+What is a docker
+
+What is microservices
+
+How to write a Ansible Playbook
+
+What is the important things in a Ansible Playbook
+
+How to launch EC2 without AWS Console
+
+How to take user input in Bash & also in python
+
+Which version are you using in RHEL
+
+How to find a file which file  size is greater than 15MB
+
+What is Linux Architecture
+
+How to check system health
+
+How to check the disk space of the system 
+
+Difference between War & Jar
+
+Difference between ALB & NLB
+
+
+
+Interview Questions from buyogo:
+================================
+
+1.what is api gateways
+2.explain about Aws Lamda service
+3.what is SQS & Publishers and types of SQS
+4 what is SNS & how you setup
+5.explain load balancers and types.
+6.what is the use of Target Group and Listeners
+7.what is ecs and Task Definition
+8.how you run the Service in Ecs
+9.diffrence b/w Task and Ruuning Task?
+10.what is internal loadbalancers?
+11.explian Architecture of SNS?
+12 what is maven PAckages?
+13.what us multi module Maven Projects
+14.what are the strategies in maven agency?
+15.what are the strategy in github action

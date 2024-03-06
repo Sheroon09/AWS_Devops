@@ -1,0 +1,33 @@
+awk--- it prints the every line data of file 
+
+
+
+>>> $ awk '{print} test.txt  >>>prints compelte lines available  on in file 
+
+
+>>> $ awk '/manager/{print}' test.txt >>>> prints manager role data in a file
+
+
+>>> $ awk '{print $1, $4} test.txt >>>> prints the first and Fourth coloumn of file
+
+
+>>> $ awk '{print NR,$0}' test.txt  >>>> NR varaible is used prints the line numbers in file
+
+
+>>> $ awk '{print $1,$NF}     >>> NF varaible represents the last coloumn or last field of  file
+
+******************************************************************************************************
+
+sed---- to replace a text  and search ,insert and deleting a test from file at run time
+
+>> $ sed -i 's/old-text/new-text/g' file name
+
+'s' it specifies the substitution operation  
+'g' replacing the occurrence of the pattern in a file
+
+>> $ sed -n 's/oldtext/newtext /p' file name >>>> prints only the replaced lines 
+
+>>$ sed -n '/text/!p filename >>> prints except the given string 
+
+>> $ sed -n '3s/oldtext /newtext/' filename   >>>> it replaces the string on a specific line number
+

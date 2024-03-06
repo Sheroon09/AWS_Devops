@@ -1,0 +1,1547 @@
+Interview Questions:
+====================
+DevOps:
+=======
+What is DevOps?
+Devops is a methodology which help to remove the gap between development and operations team.
+Implementation of devops will help us to track the bugs at initial stage and also release the applciation faster.
+
+What are the different stages of DevOps?
+Plan
+Code
+Build
+Test
+Release
+Operate
+monitor and 
+Feedback.
+
+What are the methodologies before DevOps?
+Waterfall model and agile process.
+
+Have you worked on Agile Process?
+Yes,where we have scrum master who will be assigning set of task for sprint.
+
+What is the Sprint duration?
+2 weeks.
+
+Difference between IAAS,PAAS and SAAS?
+
+SaaS (Software as a service) platforms involve software that is available via third-party over the Internet. 
+
+Examples of popular SaaS providers include: 
+
+BigCommerce.
+Google Workspace, Salesforce.
+Dropbox.
+MailChimp.
+ZenDesk.
+DocuSign.
+Slack.
+Hubspot.
+
+PaaS (Platform as a service) focuses primarily on hardware and software tools available over the internet. 
+
+Examples of popular PaaS providers include: 
+
+AWS Elastic Beanstalk.
+Heroku.
+Windows Azure (mainly used as PaaS).
+Force.com.
+Google App Engine.
+OpenShift.
+Apache Stratos.
+Adobe Magento Commerce Cloud.
+
+IaaS(Infrastructre as a service) works primarily with cloud-based and pay-as-you-go services such as storage, networking and virtualization.
+
+Examples of popular IaaS providers include: 
+
+AWS EC2.
+Rackspace.
+Google Compute Engine (GCE).
+Digital Ocean.
+Microsoft Azure.
+Magento 1 Enterprise Edition.
+
+Linux:
+=====
+Tell 10 linux commands?
+Netstat -na -- To check the running port numbers
+Ps -ef -- TO check the running services
+find / -name filename -- find a file
+grep keyword filename -- Find a keyword from a file
+mkdir -- to create the direcotry
+top -- cpu utilization
+sed -- to replace a text from file at run time
+kill -9 -- to kill the process
+touch filename -- to create zero byte size file
+tar -xvf filename.tar -- TO bundle a directory
+
+Command to check for the running ports?
+netstat -na | grep port_number
+
+Command to check the processes running?
+ps -ef
+
+Command to replace a word from file?
+sed -i 's/old-text/new-text/g' input.txt
+
+Examples for SED and AWK commands?
+awk example : https://www.geeksforgeeks.org/awk-command-unixlinux-examples/
+Sed Example : https://www.cyberciti.biz/faq/how-to-use-sed-to-find-and-replace-text-in-files-in-linux-unix-shell/
+
+What is swap memory?
+When the actual memory of RAM is full then swap memory is used to process the request.
+
+Command to kill a process?
+kill -9 PID
+
+process to free disk space?
+When we see memory alert then follow the below steps:
+1)Login to the ec2 using ssh
+2) df -h -- shows the filesystems memory and check which filesystem is occupied with space example /var
+3) cd /var -- Change to var directory
+4) du -sk  -- TO check the each directory size in var
+5) Delete the directory / clear the sapce which has consumed more space.  
+
+What is Inode?
+An inode is an index node. It serves as a unique identifier for a specific piece of metadata on a given filesystem. 
+Each piece of metadata describes what we think of as a file.
+
+We have disk space available but still unable to create a file,what might be the reason?
+Basically an inode is used for each file on the filesystem. 
+So running out of inodes generally means we are unable to create file even if we have filesystem.
+
+Command to find a file and delete the file using the same command?
+find / -name "FILE-TO-FIND" -exec rm -rf {} \;
+
+Bash Scripting:
+==============
+#! in bash scripting means = Shebang
+
+Difference between bash and shell script?
+Shell scripting is a method to automate tasks as a collection of commands.
+Shell script can be execute on any shell.
+Example of shell scripting:
+#!/bin/sh
+myString="GeeksforGeeks"
+echo "myString: $myString"
+
+Bash: Bourne after shell.
+Bash scripting is a subset of shell scripting.
+Example of bash scripting:
+#!/bin/bash 
+myString="GeeksforGeeks"
+echo "myString: $myString"
+
+Write a bash script to check a directory in a location,and should dispaly the message if the directory is available?
+#!/bin/bash
+if [ -d "/path/to/dir" ] 
+then
+    echo "Directory /path/to/dir exists." 
+else
+    echo "Error: Directory /path/to/dir does not exists."
+fi
+
+Write a bash script to check if a service is running or not,if not running then script should start the service?
+#!/bin/bash
+service=replace_me_with_a_valid_service
+if (( $(ps -ef | grep -v grep | grep $service | wc -l) > 0 ))
+then
+echo "$service is running!!!"
+else
+/etc/init.d/$service start
+fi
+
+How to know whether the previous command has been executed successfully or not?
+With the help of exit status.
+If exit status is 0 then it has been successfully executed.
+If Exit status is 1 then it has not been successfully executed.
+$? is the exit status of the most recently-executed command.
+
+$# = Total number of command line arguments passed.
+
+$* = It's a space separated string of all arguments. For example, if $1 is "hello" and $2 is "world", then $* is "hello world".
+
+$@ = Stores all the arguments that were entered on the command line.
+
+$_ = special variable
+
+How to run bash script in the background?
+Use nohup to run the script in background.
+Example:
+sudo nohup ./hello_world.sh
+
+Which version of linux are you using?
+We can say RHEL 7.9 or amazon linux 
+Note: The versions will get changed as per time.
+
+Git & GitHub:
+=============
+What will git init do ?
+This will help us to initialize .git folder in local repository.
+What does .git contains?
+.git file contains the configuration of the repository,like hooks,config etc..
+
+Why do we use git ?
+Git is a version control tool which is used to track the changes of the project.
+
+Which branching strategy are you using?
+We use GITFLOW startegy.
+Release branch is used for PRODUCTION Environment.
+Develop branch is used for development/staging Environment.
+Feature branch is used for next updates.
+Hotfixes is used for fix the bugs of Production server.
+Master is used as a copy of RELEASE branch.
+
+Git cherry-pick?
+Cherry-pick is used to pick a specific commit of a branch to another branch.
+
+Git stash?
+For example if iam working on a specific branch and i dont want to save or commit the changes,
+in the mean time i got the request to work on other file from same branch then i can use gitstash.
+This will help me to push the files to temporary stash memory.
+
+Git rebase?
+This is used to Merge two different branches.
+
+Git merge?
+THis is used to merge two different branches.
+
+Git fork?
+This is used to copy a repo from other account to our account on Github.
+
+Difference between git clone and git pull?
+Git clone is used to download the complete repository from central to local.
+Git pull is to pull the latest changes of code from central to local.
+
+Difference Between Git merge and Git Rebase?
+Git merge and Rebase are used to merge the two branches but git rebase will keep the commit
+history more clear than git merge.
+
+Difference between Git pull and git fetch?
+Git pull is to pull the latest changes of code from central to local.
+Git fetch is used to pull the metadata configuration to local like branches,configuration,HEAD,Ref etc..
+
+Is Git a distributed repository system or central repository system?
+Git is a distributed repository system.
+
+Difference between Distributed and Central Repository?
+The main difference between centralized and distributed version control is that, in centralized version control, 
+the versions are saved in the remote repository, while in distributed version control,
+ versions can be saved in the remote repository as well as in local repositories of the local machines.
+
+Which version of git are you using?
+git version 2.34.1.windows.1
+
+What are merge conflicts?
+If we have two similar files in different branches with similar content,
+when we try to merge these branches then there is a chance to see merge conflicts.
+THis happens because git will not apply the auto-merge strategy if the file is in same region.
+
+How to resolve the merge conflicts?
+By default git will Auto-Merge many chnages,but if we see merge conflicts then git will leave that to us to resolve.
+In this case there is no automation way to resolve the conflicts.
+we need to check the differences in both the commit and manually make changes and push them back to repo.
+This will help us to resolve the merge conflicts.
+
+Note: Mostly Merge conflicts will be taken care by Development Team as they are aware of the code changes.
+
+Apache Tomcat:
+==============
+Default port number of Tomcat?
+Tomcat runs on 8080 port number.
+
+Default Deployment location of Tomcat?
+Webapps will be the default deployment lcoation.
+
+Can we run multiple tomcat servers,If yes then please explain the process?
+Yes we can run multiple tomcat servers by changing the startup and shutdown port numbers of one server.
+
+How to create Users in tomcat?
+We can create users in tomcat-users.xml file.
+
+Tomcat is Developed in ___________   language?
+Java language.
+
+What are the dependencies for tomcat?
+Java is the only prerequisite for tomcat.
+
+Apache Tomcat is ________ server?
+Application Server.
+
+Difference between app and web servers?
+App server is mainly used for to serve dynamic content.
+Web servers are used to serve static content.
+
+list of app servers available in the market?
+Tomcat
+Jboss
+Weblogic
+
+Which version of tomcat are you using?
+Tomcat-9.0.65
+
+File name of Apache Tomcat Logs?
+catalina.out is the log file for tomcat.
+
+How to change the port number of Tomcat?
+Go to tomcat>conf folder
+Edit server.xml
+Search "Connector port"
+Replace "8080" by your port number
+Restart tomcat server.
+
+Nginx and Apache:
+=================
+Default port for apache?
+Default for Apache is 80.
+
+Default port for nginx?
+Default port for Apache is 80.
+
+Difference between apache and nginx?
+Apache and Nginx both are web servers.
+nginx can be used as load balancer and we dont need any extra configurations.
+Apache can be used as load balander but we need to do extra configurations.
+Nginx is pretty fast than apache in  serving static content.
+
+Default deployment location for apache and nginx?
+Apache:/var/www/html/
+Nginx: /usr/share/nginx/html
+
+Log File names of apache and nginx?
+Apache: /var/log/httpd/access_log & /var/log/httpd/error_log
+Nginx:  /var/log/nginx/access_log & /var/log/nginx/error_log
+
+How to change the default port of apache and nginx?
+Apache: /etc/httpd/conf/httpd.conf
+Nginx: /etc/nginx/nginx.conf
+
+HA PROXY:
+=========
+What is HA Proxy?
+HA proxy is the high availability, open source load balancer, reverse based proxy which is used for maintaining the website to work smoothly without causing any overload. 
+
+What is reverse Proxy?
+Reverse proxy server will be at the front of the servers such that when the users sent the request the reverse proxy server acts as load balancer and distributes the 
+traffic to the servers. Due to this the users can't directly intercat with the servers. 
+
+Configuration file name of HA PROXY?
+haproxy.cfg
+
+How to configure HA Proxy?
+We can configure the haproxy at etc/haproxy/haproxy.cfg
+
+AWS:
+====
+List of aws services you have worked on?
+I have worked on IAM,ec2,s3,applciation load balancer,Route53,VPC,CLoud watch and cloudformation templates.
+
+What is region and availability zone in aws?
+A region is the collection of avaialbility zones/data centres. A availabilty zone is an independent data centre.
+
+what is edge location?
+Edge locations are used for delivering the content with low latency and high transfer rate.
+
+Name the global services of aws?
+S3, IAM, cloudfront, route53
+
+What is aws access key and secret key?
+AWS access key and secret key are generate for connecting to the AWS Account through the CLI.
+
+Ec2:
+====
+Ec2 stands for?
+Elastic Cloud Compute.
+
+How many types of ec2 are available?
+On Demand,Reserved and Spot Instances.
+
+Different families of ec2?
+General purpose, storage optimized, compute optimized, memory optimized, accelerated computing.
+
+What is the type of ec2 you are using?
+On Demand (t2 large -- 2 core cpu and 8 gb memory)
+
+Can we attach multiple ec2 to one ebs volume?
+No We can't attached multiple ec2 to same ebs volumes,but we can attach multiple ebs to single ec2.
+
+What if the pem key of ec2 is lost?
+If the pem key is lost then we need to take the sanpshot of the ec2 and launch a new ec2 using the snapshot using a new PEM key.
+
+Can we connect to ec2 if the pem is lost,if yes then explain the process?
+No we can't connect to ec2 without the pem key.
+Only way is possible to take snapshot and launch using new pem key or if we have copied the ssh keygen to the ec2 earlier then we can login without pem key.
+
+How to take a snapshot of ec2?
+Select the ec2,go to settings and click on snapshot.
+
+What is a snapshot?
+Snapshots are a point of time copy of the ebs.
+Example i have launched one amazon linux ec2 and installed jenkins and took snapshot then
+the same snapshot can we used to launch new ec2 and by default i will be havings jenkins in it.
+
+A snapshot of t2.micro has been taken,can we change the type of instance when using the snapshot to launch new ec2?
+A snapshot of t2.micro can't be chnaged to t2.large.
+we can increase the ebs volumes but not decrease the volume.
+
+AMI:
+====
+What does AMI stand for ?
+AMI stands for Amazon machine images
+
+Difference between AMI and snapshot?
+Snapshots are use to take the copy of certain time of ebs volume,where as AMI is used for ec2.
+
+What is AMI?
+AMI are a template that has the configurations which can be used to provision ec2.
+
+What is AMI id ?
+Thats the unique identifier number for each AMI.
+
+IAM:
+===
+IAM stands for?
+Identity access management.
+
+How to create a user using IAM?
+Got to IAM servvice,select create user and provide the details.
+
+WHat are groups in IAM?
+Groups can be used to keep multiple users in the same cluster.
+Example if we have 5 users under development,then we can create a group with dev and add users in that group.
+Apply set of rules/policies to that group and 
+each user within that group will have the same level of access.
+
+What is the role of IAM?
+IAM riles are attached to users to provide specific access across the aws acoount.
+
+What is Policy in IAM?
+Policy in IAM define permissions for an action regardless the method use to perform.
+A policy is something that will be assigned to role.
+
+Difference between role and policy?
+IAM Roles manage who has access to your AWS resources, whereas IAM policies control their permissions. 
+A Role with no Policy attached to it won't have to access any AWS resources.
+ 
+What are the different levels of access we can provide to users using IAM?
+We can provide two types of access.
+COnsole/GUI access
+Programmetic/CLI Access.
+
+EBS:
+====
+EBS stands for ?
+Elastic Block storage
+
+Can we attach multiple ebs to one ec2?
+Yes we can attach multiple ebs to one ec2.
+Once ebs is attached then we need to follow below steps.
+lsblk -- to check the list of filesystem
+then we need to create a mount point to that file system
+df -h -- to check the filesystem.
+
+What is an EBS snapshot?
+EBS snapshot is a copyof certain time/backup of ebs volume.
+
+Different types of EBS volumes available?
+General Purpose SSD volumes.
+Provisioned IOPS SSD volumes.
+Throughput Optimized HDD and Cold HDD volumes.
+Previous generation Magnetic volumes.
+
+VPC:
+===
+VPC stands for?
+Virtual Private Cloud
+
+How to create VPC?
+Got to the VPC service click on create VPC. Give the name and IPV4 CIDR. Click on create VPC. 
+Then create subnets in differet availability zones. Creat a internet gateway and attach it to the VPC. 
+A default route table is created when the VPC is created and edit the routes and subnet assosciations.
+
+How many VPC can be created in one aws region?
+5
+
+What is CIDR ?
+Classless inter domain range
+
+How many Ips will be associated to 192.168.0.0/24?
+256
+
+How many ips will be used internally by aws for communication?
+five
+
+What are subnets?
+Subnets are the rang of ipv4 address in the VPC. 
+
+What is the difference between public and private subnet?
+Public subnet is assosciated with the internet gateway in the route table. 
+In private subnet it is not assosciated with the internet gateway in the route table.
+
+What is IGW?
+Internet gateway is attached to VPC,which helps for communication between VPC.
+
+What is RT?
+Route Table is used to route the traffic to targeted subnets.
+
+What is NAT gateway/ NAT instance?
+NAT gateway is a aws service which is used to connect with instances in private subnet.
+NAt gatewat service will be managed by aws.
+Nat instances is like similar ec2 and also used connect with instances in private subnets.
+NAT instance maintenace part will be on our head.
+
+Nat will be deployed in which subnet?
+Public
+
+What is VPC Peering?
+VPC peering is used to establish the connection between two VPC in the same region or different region or different aws account.
+
+Explain the process of VPC peering?
+Create two VPC in different regions with different ip address.
+Create two instances in the both regions.
+Create a peering connection and accept the conection in the other region.
+Modify the route table by adding the private address in the routes.
+
+Load Balancer:
+==============
+Full form of ELB?
+Elastic Load balancer.
+
+How many types of load balancer are available in aws?
+We have 4 types of load balancer
+1) Classic Load Balancer
+2) Application Load balancer
+3) Network Load balancer
+4) gateway Load Balancer (Available in specific regions only)
+
+How does Classic Load Balancer work?
+Classic load balancer works on the HTTP, HTTPS, TCP.
+If we have equal numbers of instances in both AZ then classic can be used.
+
+How does Application Load Balancer work?
+Application Load balancer works on HTTP/HTTPS protocol
+It works on application layer that is layer 7.
+We can configure different listeners.
+It will work based on path prefix and rules configure.
+Target group will be attached to the load balancer.
+
+How does Network Load Balancer work?
+Network Load balancer works on TCP/UDP protocol
+It works on session layer that is layer 4.
+We can configure different listeners.
+It will work based on path prefix and rules configure.
+Target group will be attached to the load balancer.
+we can assign a elastic ip to NLB.
+
+When can we use ALB and NLB?
+ALB can be used if we are aware of the traffic hitting our application.
+NLB will be used if we are not sure of the traffic hitting our applicaiton and if we are expecting sudden spikes in traffic then NLB
+can easily handle such situations.
+
+Autoscaling Groups:
+===================
+ASG stands for ?
+Autoscaling Groups.
+
+Difference between launch template and launch configuration?
+Launch COnfigurations cannot be editable,if we want to update then we need to replace the launch configuration.
+launch Template can be edited and can have different versions of template.
+We can pass parameters in Launch template.
+
+Different types of scalings in ASG?
+We have Horizontal and vertical scalings.
+
+What is Horizontal Scaling?
+Horizontal scaling means adding additional ec2 to our environment.
+
+What is Vertical Scaling?
+vertical scaling means adding more power to our existing ec2.
+
+S3 Buckets:
+==========
+Why do we use s3 Buckets?
+S3 buckets are used to store fixed objects.
+
+What are objects in s3?
+Objects can be referred to any file uploaded in s3.
+
+Default s3 bucket class?
+Standard.
+
+Different classes in s3 bucket?
+Amazon S3 Standard
+Amazon S3 Intelligent-Tiering
+Amazon S3 Standard-Infrequent Access
+Amazon S3 One Zone-Infrequent Access
+Amazon S3 Glacier Instant Retrieval
+Amazon S3 Glacier Flexible Retrieval
+Amazon S3 Glacier Deep Archive
+
+How to deploy static website in s3?
+We need to enable the static website hosting option in s3 bucket.
+Create one index.html and one error.html file and upload the same to s3 bucket.
+Attach a policy to make the objects public in s3 bucket.
+We can access the website using s3bucket url on browser.
+
+What is versioning?
+Versioning helps us to store file with multiple version.
+
+what is bucket policy?
+S3 bucket policies specify what actions are allowed or denied for which principles on the bucket that the bucket policy is attached to.
+
+S3 object Encryptions?
+Object encryption helps us to encrypt the data before saved to disk and decrypt when downloaded.
+Encryption is a method which helps to secure the data.
+
+What is object lock?
+Object Lock can help prevent objects from being deleted or overwritten for a period of retention time.
+
+Expalin S3 Cross region replciation?
+Cross region repliacation helps to automatically upload the data into destination bucket without manual intervention.
+This can be used as a backup for s3 bucket.
+
+Route53:
+========
+What is Route53?
+Route53 is a DOMAIN NAME SERVICE in aws.
+
+Is Route53 a global or regional servie?
+GLobal Service.
+
+What is Alias in Route53?
+Alias records helps us to route the traffic to selected aws resources.
+
+What are nameservers in Route53?
+What is nameserver in Route 53?
+Amazon Route 53 automatically creates a name server (NS) record that has the same name as your hosted zone. 
+It lists the four name servers that are the authoritative name servers for your hosted zone.
+
+What are different records availabe in Route53?
+A (address record)
+AAAA (IPv6 address record)
+CNAME (canonical name record)
+CAA (certification authority authorization)
+MX (mail exchange record)
+NAPTR (name authority pointer record)
+NS (name server record)
+PTR (pointer record)
+
+Different hostings policies available in Route53 and explain them?
+Simple Routing Policy.
+======================
+Simple routing policy is a simple round-robin policy and can be applied when there is a single 
+resource doing the function for the domain e.g. web server that serves content for the website.
+Weighted Routing Policy.
+=======================
+Weighted routing policy helps route traffic to different resources in specified proportions 
+(weights) e.g., 75% to one server and 25% to the other during a pilot release
+Latency-based Routing (LBR) Policy.
+==================================
+Latency-based Routing Policy helps respond to the DNS query based on which data center gives the user the lowest network latency.
+Failover Routing Policy.
+=========================
+Failover routing policy allows active-passive failover configuration, in which one resource (primary) 
+takes all traffic when it's healthy and the other resource (secondary) takes all traffic when the first isn't healthy.
+Geolocation Routing Policy.
+==========================
+Geolocation routing policy helps respond to DNS queries based on the geographic location of the users 
+i.e. location from which the DNS queries originate.
+Geoproximity Routing Policy.
+===========================
+Geoproximity routing helps route traffic to the resources based on the geographic location of the users and the resources.
+Multivalue Routing Policy.
+=========================
+Multivalue routing helps return multiple values, e.g. IP addresses for the web servers, in response to DNS queries.
+Route 53 Traffic Flow.
+======================
+Route 53 Traffic Flow helps easily manage traffic globally through a variety of routing types combined with DNS Failover 
+in order to enable a variety of low-latency, fault-tolerant architectures.
+
+CLoudwatch:
+==========
+What is cloudwatch?
+Cloudwatch is a monitoring tool used to monitor our aws resources,application.
+
+What are default metrics and custom metrics?
+Deafult metrics are cpu utilization,diskreads,diskwrites etc.
+Custom metrics can be any metric which can be pushed with bash scripting,CLI or API.
+
+How to configure a cloudwacth alert to a specific custom servcie?
+We need to create a alarm and configure SNS to that alarm.
+
+What is SNS?
+Simple notification service which will helps the user to notify based on email,SMS.
+
+What are the different metrics we can configure on cloudwatch?
+CPU Utilization
+Service running or not Metric
+Disk write and out metric etc..
+
+How to configure dashboard in cloudwatch?
+Goto CLoudwatch and click on dashboard,select the metric to which you want to create dashboard.
+Select the type of widget you want to configure and save.
+
+What is cloud watch agent used for?
+Cloud watch agents are responsible to push the metrics to cloudwatch dashboard.
+Agents needs to be up and running on the ec2.
+
+Cloudformation:
+===============
+Why do we use cloudformation?
+Cloudformation Templates are used to provision infrastructure on aws environment.
+
+What is IAC?
+Infrastructre As Code.
+
+Can you explain what a template is in the context of AWS CloudFormation?
+A CF template can be written in JSON or YAML language.
+A template describes all your resources and their properties.
+
+What are stacks?
+A stack is a collection of AWS resources that you can manage as a single unit.
+
+Sample Cloudformation Template to provision ec2?
+AWSTemplateFormatVersion: 2010-09-09
+Description: Part 1 - Build a webapp stack with CloudFormation
+
+Resources:
+  WebAppInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0d5eff06f840b45e9 # ImageID valid only in us-east-1 region
+      InstanceType: t2.micro
+	  
+How to add parameters in CF template while creating Stack?
+While Parameters are technically optional, they are essential to building flexible CloudFormation templates
+Example:
+Parameters:
+  BucketNameParam:
+    Description: Name of the bucket
+    Type: String
+    Default: PrimaryUploadBucket
+
+Resources:
+  MyS3Bucket:
+    Type: "AWS::S3::Bucket"
+    Properties:
+      AccessControl: PublicRead
+      BucketName: !Ref BucketNameParam
+	  
+What is nested stack?
+Nested stacks are stacks created as part of other stacks. You create a nested stack within 
+another stack by using the AWS::CloudFormation::Stack resource. 
+
+What is reference?
+When you are declaring a resource in a template and you need to specify another template resource by name, 
+you can use the Ref to refer to that other resource.
+
+What is output in template?
+The optional Outputs section declares output values that you can import into other stacks (to create cross-stack references), 
+return in response (to describe stack calls), or view on the AWS CloudFormation console. 
+For example, you can output the S3 bucket name for a stack to make the bucket easier to find.
+
+What is mapping?
+CloudFormation provides two elements known as Mappings and Conditionals. Mappings allow you to create simple "Key:Value" 
+dictionaries or hashes for use in your resource declarations.
+And Conditionals allow you to use some logic-based decisions in your resources to add or modify values.
+
+Sample CF template to create VPC,2subnets,Launch ec2,create Loadbalancer and attach the ec2 as target group to loadbalancer?
+
+AWS RDS:
+=======
+RDS means?
+Relational Database Service.
+
+What is the use of RDS?
+RDS is used to store the data related to applciation.
+With the help of RDS service we can directly provision a ec2 with db and start using the service.
+
+What are the types of DB Storages?
+IOPS helps in creating report of IOPS value for every minute.
+Latency helps in indicating a slower performance.
+Throughput is the number of bytes transferred to and from the disk every second.
+Queue Depth helps in indicating a slow performance.
+
+What is the difference between Database Cluster and Database Instances?
+Database Cluster
+Its the name of the cluster that holds instances.
+Database Instances
+Its the name of each instance in the cluster.
+
+Difference between RDS service and DB in ec2/vm ?
+RDS service is provided by aws where we can spin up rds instance and start using th db.
+DB in ec2/vm is standalone DB where we need to install and do the maintenance as well.
+
+How can we connect to MS SQL RDS?
+We can install sqlworkbench and enter the dbhost url and port number and click on test connection.
+List Backup types supported by Amazon RDS?
+There are two types of backups supported by Amazon RDS such as automated backups and database snapshots.
+The automated backup enables point-in-time recovery of your DB instance automatically.
+A DB snapshot is a manual process to backup the DB instance. It can be done as frequently as you wish.
+
+What is RDS backup retention period?
+That will be period to take backup of RDS.
+If retention period is of 7 days then it will take vackup after 7 days.
+
+Docker:
+=======
+What is Docker?
+Docker is for containerization where we can deploy different applications on different containers.
+Docker containers are independent of Operating system and the boot up time for docker is very fast comparing to VM.
+Docker containers can be easily ship from one env to anaohter env and the images can be stored in central Repo (DockerHub).
+
+What is the difference between containerization and virtualization?
+Virtualization enables you to run multiple operating systems on the hardware of a single physical server, 
+while containerization enables you to deploy multiple applications using the same operating system on a single virtual machine or server.
+
+Explain the Architecture of Docker?
+Docker follows Client-Server architecture, which includes the three main components that are Docker Client, Docker Host, and Docker Registry.
+1. Docker Client
+Docker client uses commands and REST APIs to communicate with the Docker Daemon (Server). When a client runs any docker command on the docker client terminal, the client terminal sends these docker commands to the Docker daemon. Docker daemon receives these commands from the docker client in the form of command and REST API's request.
+Note: Docker Client has an ability to communicate with more than one docker daemon.
+Docker Client uses Command Line Interface (CLI) to run the following commands -
+docker build
+docker pull
+docker run
+2. Docker Host
+Docker Host is used to provide an environment to execute and run applications. It contains the docker daemon, images, containers, networks, and storage.
+3. Docker Registry
+Docker Registry manages and stores the Docker images.
+There are two types of registries in the Docker -
+Pubic Registry - Public Registry is also called as Docker hub.
+Private Registry - It is used to share images within the enterprise.
+
+What is Docker file?
+DockerFile is a template which containes set of instructions which helps to build docker image.
+
+What is Docker image?
+A Docker image is a Template used to execute code in a Docker container.
+
+What is docker container?
+A docker container is a running state of image,which execute the code of docker image and help to run application.
+
+Create sample dockerfile use case?
+FROM alpine:3.12
+MAINTAINER <Your_Name>
+RUN mkdir /usr/local/tomcat/
+WORKDIR /usr/local/tomcat
+RUN apk --no-cache add curl && \ 
+    apk add --update curl && \ 
+	curl -O https://mirrors.sonic.net/apache/tomcat/tomcat-8/v8.5.61/bin/apache-tomcat-8.5.61.tar.gz
+RUN tar xvfz apache*.tar.gz
+RUN mv apache-tomcat-8.5.61/* /usr/local/tomcat/.
+RUN rm -rf apache-*
+COPY SampleWebApp.war /usr/local/tomcat/webapps
+RUN apk update && apk add openjdk8
+WORKDIR /usr/local/tomcat
+EXPOSE 8080
+CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
+
+How to build the dockerfile?
+docker build -t .  (-t means tag '.' represent current location of docker file)  OR
+docker build -t /pathofDockerFile
+
+Difference between CMD and EntryPoint?
+CMD and ENtryPoint both are executables which will help to execute the commands at the runtime of container.
+We can have multiple CMD but only the last CMD will get execute.
+CMD are Overriable and Entrypoint is not overridable.
+CMD and ENTRY both can we used is same DockerFile but thats not the best practise.
+EXAMPLE:
+FROM ubuntu
+RUN apt-get update
+ENTRYPOINT ["echo","hello"]
+CMD ["WORLD"]
+
+When running the container it will show "Hello,WORLD"
+Suppose we are passign argument like docker run -it -d <image_name> Sabair
+Output: "hello Sabair" 
+
+Difference between COPY and ADD ?
+COPY is used to copy file from dockerhost to docker image.
+ADD can be used to download file from internet and also to extract the tar file.
+
+Explain different modules of Dockerfile?
+FROM: where to download the base image.-
+MAINTAINER: Non executable instruction used to indicate the author of DockerFile.
+ADD: It copy the file from source to destination and also extracts the file.
+CMD: It specifies the intended command for the image.
+ENTRYPOINT: when the container is up,entry point is the starting of execution.
+ENV: This instruction can be used to set the env variables in the container.
+EXPOSE: expose a specified port.
+RUN: This instruction is used to execute a command on top of an existing layer.
+USER: This is used to set the username.
+VOLUME: Volume instruction is used to enable access to a location.
+WORKDIR: To change the directory.
+ONBUILD: It will add a trigger instruction.
+
+How to list the images in docker?
+docker image ps
+
+How to delete the images in docker?
+docker image rm <image_name>
+
+How to get the details of docker image?
+docker inspect <Docker_image>
+
+What is dangling images?
+Dangling images are layers that have no relationship to any tagged images. 
+They no longer serve a purpose and consume disk space.
+
+What is tag in docker images?
+Tag in docker images specify the version of the image.
+
+What is docker registry?
+Docker registry is centralized place to store our images similar like github.
+
+How to push docker image to docker registry?
+We need to login to docker registry first by using
+docker login
+We need to tag image name with docker repo name
+once login is succeeded,use
+docker push <image_name>
+
+How to run a container?
+docker run -itd -p 8080:8080 -name test <image_name>
+(-IT= Interactive Terminal  -d= detach mode/foreground -p= port exposing -name= name of image)
+
+command to check the running containers?
+docker container ps 
+
+Command to Get the details of containers?
+docker container inspect <COntainer_id>
+
+Can we delete a pause container?
+No, we need to stop the pause container and then delete the container by using
+docker container stop <Container_ID>
+
+How to check the list of containers running and exited?
+docker container ps -a
+
+What is -it and -d in docker run commands?
+-IT = interactive Terminal
+-D = Detach mode /foreground/background
+
+What is port mapping in docker containers?
+Port mapping is used to expose a port to public.
+
+How to connect to the running container?
+docker container exec -it <Container_id> /bin/bash
+
+How to kill a running container?
+docker kill my_container
+
+How to check the logs of container?
+docker container logs <container_id> --follow
+
+How to commit a running container?
+docker save -o <File_NAME>.tar <Image_Name>
+
+What is docker volumes and how many types of volumes are availabe?
+Docker volumes are used to store docker container data.
+This is used to store persistent data.
+Even if our container is killed or deleted then the data will be stored in volume.
+We have 3 types of volumes
+1) Volume
+2) tmpfs mount
+3) BindMount
+
+Command to run docker container with a volume attached?
+docker run -d --name <container_name> -v <Volume_name>:/app <Image_name>
+
+What is docker networks?
+Docker networking is primarily used to establish communication between Docker 
+containers and the outside world via the host machine where the Docker daemon is running.
+
+Different types of network and there usage?
+The Bridge Driver:
+This is the default. Whenever you start Docker, a bridge network gets created and all newly started 
+containers will connect automatically to the default bridge network.
+The Host Driver:
+You can use the host network if you don't want to rely on Docker's networking but instead rely on the host machine networking.
+The Overlay Driver:
+The Overlay driver is for multi-host network communication, as with Docker Swarm or Kubernetes. 
+Overlay network allows us to communicate with containers running on different node machines.
+
+What is docker compose?
+Docker compose is a different tool used to provision multiple container at the same time.
+If we have dependencies on two containers then we can easily manage them with the help of dockerswarm.
+
+Sample-two-tier:docker-compose file
+========================
+
+version:  '3'   -> Depends upon docker-compose version
+services:       -> All the services should be in this section
+   db:          -> Name of service (name can be anything)
+     image: mysql:5.7  -> Images used to run container
+     volumes:          -> volumes to store contaienr data
+       - db_data:/var/lib/mysql    -> mount point
+     restart: always
+     environment:    -> Environmental variables
+       - MYSQL_ROOT_PASSWORD=somewordpress
+       - MYSQL_DATABASE=wordpress
+       - MYSQL_USER=wordpress
+       - MYSQL_PASSWORD=wordpress
+   wordpress:
+     depends_on:   -> It will wait for db service to get started.
+       -   db
+     image: wordpress:latest
+     ports:        -> port to expose to outerworld
+       - "8000:80"
+     restart: always
+     environment:
+       - WORDPRESS_DB_HOST=db:3306
+       - WORDPRESS_DB_USER=wordpress
+       - WORDPRESS_DB_PASSWORD=wordpress
+       - WORDPRESS_DB_NAME=wordpress
+
+volumes:
+    db_data: { }
+
+Docker-compose commands?
+1) docker-compose up -> To run the docker-compose file
+2) docker-compose up -d -> To run the docker-compose file in detach mode
+3) docker-compose down -> To stop & delete the docker-compose services
+4) docker-compose restart -> To restart docker-compose
+5) docker-compose stop -> To stop docker-compose.
+6) docker-compose start -> To start docker-compose
+7) docker-compose ps -> list of containers
+8) docker-compose pause -> pause the docker-compose
+9) docker-compose unpause -> unpause the docker-compose
+10)docker-compose top -> to view top performances
+11)docker-compose up -d --scale db=5  ->To run 5 db container (db is nothing but service name)
+Note: we can't scale the services using port number because of port conflicts.
+12)docker-compose -f docker-compose2.yml up -d -> To use other docker-compose file
+docker-compose create -> It will create container with only default network
+13)docker-compose iamges -> List of imags used in docker compose
+14)docker-compose kill -> kill the containers
+15)docker-compose logs -> To check the logs of containers
+16)docker-compose port webapp 80 -> To check if port 80 is bind with webapp service or not
+17)docker-compose exec webapp ls -> Execute the command in webapp container
+
+Docker Commands?
+docker run hello-world  -- run container of hello-world image
+docker ps  -- to check the list of running containers
+docker ps -a  --list of running and exited containers
+docker images  -- list of images
+docker search tomcat  -- search for tomcat image locally
+docker pull tomcat   -- pull tomcat image from docker registry
+docker run -it -p 1234:8080 tomcat  -- RUN container using tomcat image
+docker build -t sabair .  -- Build docker image with name sabair 
+docker tag sabair_ubuntu sabair_ubuntu-PROD -- tag the image sabair_ubuntu with sabair_ubuntu-PROD
+docker rm  <Container_ID> -- delete container
+docker rmi <Image_ID>  -- delete image
+docker exec -it 5267e21d140 /bin/bash -- Connect with image 5267 (container_id) 
+docker commit 5267e21d140 sabair_v2:latest  -- save the changes made to container sabair_v2
+
+Export/Import Docker Image to file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+docker save image:tag > arch_name.tar
+docker load -i arch_name.tar
+
+Import/Export Docker Image to AWS ECR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+docker build -t sabair:v1 .
+aws ecr get-login --no-include-email --region=ca-central-1 
+docker tag  sabair:v1  12345678.dkr.ecr.ca-central-1.amazonaws.com/myrepo:latest
+docker push 12345678.dkr.ecr.ca-central-1.amazonaws.com/myrepo:lastest
+docker pull 12345678.dkr.ecr.ca-central-1.amazonaws.com/myrepo:latest
+
+Kill and Delete Containers and Images
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+docker rm -f $(docker ps -aq)        # Delete all Containers
+docker rmi -f $(docker images -q)    # Delete all Images
+
+Ansible:
+=======
+What is ansible used for?
+Ansible is used for configuration management,if suppose we have 10 servers and need to 
+make changes in the 10 servers then ansible is something which can help us to do the changes in a single click.
+Ansible is agentless arhitecture which works on port number 22 (SSH).
+We need to configure inventory/hosts whihc will have the ip or dns of servers.
+With ansible adhoc commands or playbooks we can execute the job and make our work done.
+Ansible is an ecample of push based  configuration management tool.
+
+Explain the architecture of ansible?
+Playbooks
+Modules
+Inventory
+Plusgins
+
+Is ansible push based or pull based?
+Push based.
+
+What is inventory in ansible?
+Inventory can be also called as hosts file,which will contains the ip address of other servers.
+
+How many types of inventory available in ansbile and explain them?
+Static Inventory - If we have 10 servers then 10 ips will be configured in inventory.
+Dynamic Inventory - If we are provisioning new ec2 servers and in this case dynamic inventory
+will help us to capture the newly provisioned server ips.
+For this we need to have python script which will execute and capture the ip of newly provisioned servers.
+
+What is playbook in ansible?
+Playbook will consists of different task/plays which will get executed on servers.
+
+ansible is written in which language?
+Python
+
+Ansible playbooks can be written in which language?
+YML Language.
+
+Tell 15 modules in ansble?
+Yum
+Service
+Shell
+lineinfile
+dir
+copy
+handlers
+notifiers
+apt
+service
+debug
+register
+file
+git
+archive
+
+What is adhoc command in ansbile?
+Adhoc commands are single line commands to execute the task and server/node machines.
+Example:
+ansible all -m ping -- To check the connetivity between slaves
+
+What are ansible roles?
+Ansible roles are used to make small parts of a playbook.
+meaning instead of having all the tasks within single playbook and make it clumpsy,
+we create roles with small set of tasks.
+Roles are also reusable,roles an be called with any playbook and start using them.
+
+Direcotry structure of ansible roles?
+├── defaults
+│   └── main.yml
+├── files
+├── handlers
+│   └── main.yml
+├── meta
+│   └── main.yml
+├── README.md
+├── tasks
+│   └── main.yml
+├── templates
+├── tests
+│   ├── inventory
+│   └── test.yml
+└── vars
+    └── main.yml
+	
+What is ansible vault?
+Ansiable vault is used to store the files with encryption.
+if we have password then we use the vault to encrypt the file.
+
+What is handlers in ansible?
+handlers are used if we have dependecy on different plays/task.
+Example task2 should get execute only if task1 is successfully executed then
+in task 1 we configure "Notifier" which helps to send the alert to handler in task2 that the task is completed.
+Note: Notifier name and Handler name should be same.
+
+What is ansible galaxy?
+What is an Ansible galaxy?
+Ansible Galaxy is essentially a large public repository of Ansible roles. Roles ship with READMEs detailing the 
+role's use and available variables. Galaxy contains a large number of roles that are constantly evolving and increasing.
+
+what is ansible tower?
+Ansible Tower is more for enterprise edition,where we can use GUI and easily manage and execute our playbooks
+and inventories.
+
+Wtire 5 Sample Ansible playbooks?
+https://github.com/betawins/Ansible-playbook-NcodeIT
+
+Jenkins:
+========
+What is jenkins?
+Jenkins is a Opensource CICD tool,this is used to automate the jobs and easily deploy on environments.
+
+What is CICD?
+Continous Integration,Continous Deployment/Continous Delivery.
+
+What is continous integration,continous Delivery and continous Deployment?
+Continous Integration:
+When a commit occurs on github repository then with the help of webhooks and based upon the event occure jenkins job will get
+triggered,which will execute different stages and build a war package,THis package will be push to artifactory location.
+This part comes under Continous Integration.
+COntinous Deployment Means when ever a package is created then it will automatically deploy on the end environment.
+Continous Delivery makes sure that the environment is ready for deployment but it will actually not deploy the package.
+
+Jenkins is written in which language?
+Jenkins is written in JAVA.
+
+Jenkins run on which port number?
+8080
+
+What is Jenkins file?
+jenkinsFile is a text file which consists of different stages.
+Each stage will have a set of task to be executed.
+
+What is Jenkins pipeline?
+jenkins Pipeline will be executed based on jenkinsFile,where differen stages will get executed.
+We have two types of pipelines,
+1) Declarative
+2) Scripted
+
+Types of jenkins job/projects?
+Freestyle project.
+Maven project.
+Pipeline.
+Multibranch pipeline.
+External Job.
+Multi-configuration project.
+Github organization.
+
+Name some jenkins plugins?
+Git
+Java
+Maven
+role based access
+Docker
+tomcat
+sonarqube
+Nexus Artifactory
+Slack
+
+What is workspace in jenkins?
+Workspace is a place where all the jenkins jobs data will be stored.
+
+DIfferent stages of Jenkins pipeline?
+Git clone -- Helps to clone the source code.
+Sonarqube -- To check the quality of code.
+Maven -- TO build the source code and create package out of it.
+Nexus -- TO push the artifacts to nexus repository.
+Slack -- To send the build out put to slack channel.
+Email -- To send the build output to email.
+
+How many types of pipeline we have in jenkins?
+We have two types of pipelines,
+1) Declarative
+2) Scripted
+
+Difference between declarative and scripted pipeline?
+Declarative Pipeline is configured within the Jenkinsfile and stored in Central Repository (GitHub)
+Declarative Pipeline will start with pipelines and if there is any issue in pipeline then
+the moment pipeline is triggered it will throw the error.
+Example syntax:
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
+
+Scripted pipelines are configured inside the job.
+Scripted pipelines will start with nodes and if there is any error in 100 the line then it
+will execute all the 99 lines and throw the error at the 100 line.
+Example:
+node {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
+
+How to seggregate user roles in jenkins?
+We can use role based strategy plugin and add the user read,view and other access.
+
+How to take backup of jenkins server?
+jenkins backup can be taken in two ways either by using
+Thinbackup Plugin or
+by using bash script to takle the backup of workspace and dump that in some other location.
+
+What is master and slave configuration jenkins?
+Master and salve configuration is implemented for highly availability of jenkins server.
+We can offload the work from master to slave and master can be used only to pass order on slave nodes.
+Slave node are also responsible to execute some specific job.
+For example if we have java and python applications then we can confgiure two slaves for JAVA and Python applications.
+java slave is responsible to execute java related jobs and python slave for python related jobs.
+
+What is label in slave?
+Label are names to define our slave machines.
+lables play very important role when dedicating a job to the particualr slave.
+
+What is executors in jenkins?
+If we have 3 executors then means we can run 3 jobs at the same time.
+
+Write sample jenkinsPipeline?
+pipeline {
+    agent {
+        label "master"
+    }
+    tools {
+        // Note: this should match with the tool name configured in your jenkins instance (JENKINS_URL/configureTools/)
+        maven "MVN_HOME"
+        
+    }
+	 environment {
+        // This can be nexus3 or nexus2
+        NEXUS_VERSION = "nexus3"
+        // This can be http or https
+        NEXUS_PROTOCOL = "http"
+        // Where your Nexus is running
+        NEXUS_URL = "18.216.151.197:8081/"
+        // Repository where we will upload the artifact
+        NEXUS_REPOSITORY = "soanrqube"
+        // Jenkins credential id to authenticate to Nexus OSS
+        NEXUS_CREDENTIAL_ID = "nexus_keygen"
+    }
+    stages {
+        stage("clone code") {
+            steps {
+                script {
+                    // Let's clone the source
+                    git 'https://github.com/betawins/sabear_simplecutomerapp.git';
+                }
+            }
+        }
+        stage("mvn build") {
+            steps {
+                script {
+                    // If you are using Windows then you should use "bat" step
+                    // Since unit testing is out of the scope we skip them
+                    sh 'mvn -Dmaven.test.failure.ignore=true install'
+                }
+            }
+        }
+        stage("publish to nexus") {
+            steps {
+                script {
+                    // Read POM xml file using 'readMavenPom' step , this step 'readMavenPom' is included in: https://plugins.jenkins.io/pipeline-utility-steps
+                    pom = readMavenPom file: "pom.xml";
+                    // Find built artifact under target folder
+                    filesByGlob = findFiles(glob: "target/*.${pom.packaging}");
+                    // Print some info from the artifact found
+                    echo "${filesByGlob[0].name} ${filesByGlob[0].path} ${filesByGlob[0].directory} ${filesByGlob[0].length} ${filesByGlob[0].lastModified}"
+                    // Extract the path from the File found
+                    artifactPath = filesByGlob[0].path;
+                    // Assign to a boolean response verifying If the artifact name exists
+                    artifactExists = fileExists artifactPath;
+                    if(artifactExists) {
+                        echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
+                        nexusArtifactUploader(
+                            nexusVersion: NEXUS_VERSION,
+                            protocol: NEXUS_PROTOCOL,
+                            nexusUrl: NEXUS_URL,
+			    groupId: pom.groupId,
+                            version: pom.version,
+                            repository: NEXUS_REPOSITORY,
+                            credentialsId: NEXUS_CREDENTIAL_ID,
+                            artifacts: [
+                                // Artifact generated such as .jar, .ear and .war files.
+                                [artifactId: pom.artifactId,
+                                classifier: '',
+                                file: artifactPath,
+                                type: pom.packaging],
+                                // Lets upload the pom.xml file for additional information for Transitive dependencies
+                                [artifactId: pom.artifactId,
+                                classifier: '',
+                                file: "pom.xml",
+                                type: "pom"]
+                            ]
+                        );
+                    } else {
+                        error "*** File: ${artifactPath}, could not be found";
+                    }
+                }
+            }
+        }
+    }
+}
+
+What is jenkins parameterized job?
+Parameterized jobs will helps us to pass the parameters in jenkins job.
+For example if we want to deploy the same job in different environments then instead of creating different jobs
+we can configure a parameter with environment and the same will be reflected in job and seggregatethe environments.
+
+What are the global variables in jenkins?
+Global environment variables are the variables that can be used in any and every Pipeline or Job built on Jenkins. 
+The global variables are set via the Jenkins console and via the groovy script of a pipeline.
+Example:
+BUILD_NUMBER - The current build number. For example "153"
+BUILD_ID - The current build id. For example "2018-08-22_23-59-59"
+BUILD_DISPLAY_NAME - The name of the current build. For example "#153".
+JOB_NAME - Name of the project of this build. For example "foo"
+BUILD_TAG - String of "jenkins-${JOB_NAME}-${BUILD_NUMBER}".
+EXECUTOR_NUMBER - The unique number that identifies the current executor.
+NODE_NAME - Name of the "slave" or "master". For example "linux".
+NODE_LABELS - Whitespace-separated list of labels that the node is assigned.
+WORKSPACE - Absolute path of the build as a workspace.
+JENKINS_HOME - Absolute path on the master node for Jenkins to store data.
+JENKINS_URL - URL of Jenkins. For example http://server:port/jenkins/
+BUILD_URL - Full URL of this build. For example http://server:port/jenkins/job/foo/15/
+JOB_URL - Full URL of this job. For example http://server:port/jenkins/job/foo/
+
+What is Maven?
+Maven is build tool used to build java applications.
+With maven we can compile the source code and build the packages.
+
+Maven lifecycles?
+prepare-resources	--	Resource copying can be customized in this phase.
+validate	--	Validates if the project is correct and if all necessary information is available.
+compile	-- code compilation is done in this phase.
+Test -- Tests the compiled source code suitable for testing framework.
+package	-- This phase creates the JAR/WAR package as mentioned in the packaging in POM.xml.
+install	-- This phase installs the package in local/remote maven repository.
+Deploy	-- Copies the final package to the remote repository.
+
+What is Pom.xml?
+PROJECT OBJECT MODEL.
+POM containes artifact id,versions,packaging,plugins and dependencies.
+
+Maven Repositories?
+Local
+Central and 
+Remote Repositories.
+
+What is sonarqube?
+Sonarqube is a tool to check the qulaity of code.
+
+What are sonarscanners?
+What does Sonar scanner do?
+SonarScanner is a separate client type application that in connection with the SonarQube server will run project analysis 
+and then send the results to the SonarQube server to process it.
+
+What is qualitygate and quality profile in sonarqube?
+Quality Profiles are a core component of SonarQube where you define sets of Rules that, when violated, raise issues on your codebase
+Quality Gates are the set of conditions a project must meet before it should be pushed to further environments. Quality Gates 
+considers all of the quality metrics for a project and assigns a passed or failed designation for that project.
+
+Sonarqube runs on which port number?
+9000
+
+What is nexus?
+Nexus is a central repository to store the artifacts (packages)
+
+Nexus runs on which port number?
+8081
+
+What is snapshots and releases in nexus?
+Snaposhots are not the final version of artifact and can be replaced.
+Release are final artifact version  and this cannot be replaced.
+
+Terraform:
+=========
+Basic terraform commands?
+Common commands:
+    apply              Builds or changes infrastructure
+    console            Interactive console for Terraform interpolations
+    destroy            Destroy Terraform-managed infrastructure
+    fmt                Rewrites config files to canonical format
+    get                Download and install modules for the configuration
+    graph              Create a visual graph of Terraform resources
+    import             Import existing infrastructure into Terraform
+    init               Initialize a new or existing Terraform configuration
+    output             Read an output from a state file
+    plan               Generate and show an execution plan
+    providers          Prints a tree of the providers used in the configuration
+    push               Upload this Terraform module to Terraform Enterprise to run
+    refresh            Update local state file against real resources
+    show               Inspect Terraform state or plan
+    taint              Manually mark a resource for recreation
+    untaint            Manually unmark a resource as tainted
+    validate           Validates the Terraform files
+    version            Prints the Terraform version
+    workspace          Workspace management
+
+All other commands:
+    debug              Debug output management (experimental)
+    force-unlock       Manually unlock the terraform state
+    state              Advanced state management
+	
+What are terraform provisioners?
+What is a Provisioner Terraform?
+Provisioners are used to execute scripts on a local or remote machine as part of resource creation or destruction.
+ 
+What are terraform providers?
+A provider is a Terraform plugin that allows users to manage an external API. Provider plugins like the AWS provider or the cloud-init 
+provider act as a translation layer that allows Terraform to communicate with many different cloud providers, databases, and services.
+
+What happens if a resource is removed from terraform state file?
+Items removed from the Terraform state are only no longer managed by Terraform. 
+For example, if you remove an AWS instance from the state, the AWS instance will 
+continue running, but terraform plan will no longer see that instance.
+
+What is State File Locking?
+State file locking is a Terraform mechanism that prevents operations on a specific state file from being performed by multiple 
+users at the same time. Once the lock from one user is released, any other user who has taken a lock on that state file can operate on it. 
+This aids in the prevention of state file corruption. The acquiring of a lock on a state file in the backend is a backend operation. 
+If acquiring a lock on the state file takes longer than expected, you will receive a status message as an output.
+
+What is a Remote Backend in Terraform?
+Terraform remote backend is used to store Terraform's state and can also run operations in Terraform Cloud. 
+Multiple terraform commands such as init, plan, apply, destroy (terraform version >= v0.11.12), get, output, 
+providers, state (sub-commands: list, mv, pull, push, rm, show), taint, untaint, validate, and many more are 
+available via remote backend. It is compatible with a single remote Terraform cloud workspace or multiple workspaces. 
+You can use terraform cloud's run environment to run remote operations such as terraform plan or terraform apply.
+
+What is terraform taint and tainted resource?
+The terraform taint command informs Terraform that a particular object has become degraded or damaged. 
+Terraform represents this by marking the object as "tainted" in the Terraform state, and Terraform will
+propose to replace it in the next plan you create.
+ 
+What are components of terraform?
+Terraform has two important components: Terraform Core and Terraform Plugins. 
+
+Modules in terraform?
+A Terraform module allows you to create logical abstraction on the top of some resource set. 
+In other words, a module allows you to group resources together and reuse this group later, possibly many times.
+
+What is Import in Terraform?
+Terraform is able to import existing infrastructure. This allows us take resources we've created by some other 
+means (i.e. via console) and bring it under Terraform management.
+The terraform import command is used to import existing infrastructure.
+
+k8s:
+====
+Statefullsets vs deployment?
+Secret vs configmap?
+Node vs pod?
+What is helm?
+Daemonset vs replicaset?
+K8s architecture?
+Services types?
+Uses of taints and tolerations?
+K8s basic commands?
+What is  Init container and uses?
+Init container vs side car container?
+Swarm or docker vs k8s?
+Pv and pvcs?

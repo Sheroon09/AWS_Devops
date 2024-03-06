@@ -1,0 +1,45 @@
+Self intro:
+===========
+Hi this is XXXXX working as DevOps Engineer for XXXX company
+for last XX Years.
+Currently i have been working for XXXX client where our team is managing 
+2 applications.
+As a DevOps engineer i make sure the environment is clean and running.
+I have worked on various Devops Tools like Git,Github,Jenkins,maven,Ansible,Docker,
+Aws cloud and physical Data Centers.
+
+In aws i have worked on various services like ec2,s3,route53,application load
+balancer,VPC,cloud watch for monitoring.
+
+
+Roles and Responsibilities:
+===========================
+we worked along with development teams for next releases.
+If we have any monitoring alerts then i will be working on that alerts.
+Managaing jenkins pipelines and other infrastructure.
+New on boarding of application to our environment.
+working on patching activities along with linux team for every quarter
+to make sure the kernels are updated,our team is responsible for
+pre patching and post patching activities.
+Prepatching and post patching means if patching is schedule at 2:30 then 30 mins
+prior patching (2 p.m) we bring down all the services running on the servers,once patching
+is done then will bring up all the services.
+We provide 24/7 support means pagerduty if high priority tickets then will
+get a call on mobile and will look into that issue.
+
+Prepatching and post patching activities (Answer only if asked):
+==============================================================
+Patching activities..
+
+Tell that we support patching activities..
+We do pre patching and post patching activities.
+
+Pre patching means bringin down the traffic by disabling the health check,brining down all the services running in the servers.
+
+We have ansible playbooks to do this job.
+
+Post patching means brining up all the services running in the servers and enabling the traffic back.
+Team (Answer only if asked)
+===========================
+We have a team of 6 members from offshore and we work 24/7.
+From onshore we have our manager and scrum master.

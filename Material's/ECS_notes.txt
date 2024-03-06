@@ -1,0 +1,55 @@
+NOTES ON ECS:
+=============
+what is ECS?
+Amazon Elastic Container Service (ECS) is a highly scalable, high performance container management service that supports Docker containers and allows you to easily run applications on a managed cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances.
+ECS is a managed container orchestrator
+IT COMES UNDER SAME FAMILY OF DOCKER,SWARM AND KUBERNETTES AND IS MAINTAINED BY AWS
+ECS IS "BRAINS BEHIND" HOW YOU Deploy "YOUR Containers"
+ECS only works with containers
+why ORCHESTRATORS?
+manage life cycles of containers create/restart/destroy
+Deploy and load balance application across multiple servers
+autoscaling to handle variance in traffic
+Rolling out changes to application
+what is cluster?
+cluster is a bunch of resources that your containers run on. bunch of EC2 VM's.
+ECS vs OTHERS
+Docker Compose Deployment
+user composes a doceker-compose.yml and suppose we have 3 servers we can deploy the docker file in 3 servers but the three servers don't know about all three having same docker file to run
+docker composer do not have autoscaling but in orchestration we have that
+ECS is a simple alternative for traditional orchestrators
+===================================================================
+ECS infrastructure and launch:
+ECS has two launch types
+EC2
+FARGATE
+ EC2 LAUNCH TYPE:
+ ================
+ in ec2-we have to manage the underlying ec2 instances
+ ECS control pane
+ cluster- ec2-ec2-we have to install dockers and ECS agent
+ YOU HAVE FULL CONTROL OVER YOUR INFRASTRUCTURE.
+ EC2 vs FARGATE(serverless)
+ ==============
+ FARGATE- aws manages underlying infrastructure
+ ECS control pane - fargate - NO EC2 instances.
+ fargate will create servers "on-demand".
+ once the ec2 instances are created our cluster will deploy the container services.
+ You do not need to maintain or provision any ec2 instances.
+ you are paying for what you use and if any of the servers scales down it decrease your cost as well.
+ ECS TASK DEFNITION:
+ ===================
+ Task definition file is going to act as a blueprint that describes how containers should launch.
+ how much CPU/MEM
+ image/ports/volumes
+ what is a task?
+ An instance of a task definition.
+ a running container with settings defined in the task definition.
+ ECS Services:
+ -============
+ what is a service?
+ a service ensures that a certain number of tasks are running at all times, It also restarts containers that have exited/crashed so we have two instances.
+ SERVICE is also monitors EC2 instance fails, the service will restart task on a working ec2 instance.
+ LOAD BALANCERS:
+ ================
+ a load balancer is just to make sure routed to all our resources and make sures the load is balanced across all instances.
